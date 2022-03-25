@@ -7,11 +7,16 @@ import './Products.css'
 
 const Products = () => {
     const [products, setProducts] = useState([])
+    const [cart, setCart] = useState([])
     useEffect(() => {
         fetch('products.json')
             .then(res => res.json())
             .then(data => setProducts(data))
-    }, [])
+    }, []);
+
+    const handleAddToCart = (product) => {
+        setCart(product);
+    }
 
     return (
         <div>
@@ -19,12 +24,16 @@ const Products = () => {
                 <div className="col-lg-10 pe-0 col-md-9">
                     <div className="row container mt-5">
                         {
-                            products.map(product => <Laptop key={product.id} product={product}></Laptop>)
+                            products.map(product => <Laptop
+                                key={product.id}
+                                product={product}
+                                handleAddToCart={handleAddToCart}
+                            ></Laptop>)
                         }
                     </div>
                 </div>
                 <div className="col-lg-2 ps-2 col-md-3 cart-container">
-                    <Cart></Cart>
+                    <Cart cart={cart}></Cart>
                 </div>
             </div>
 
