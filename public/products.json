@@ -1,0 +1,30 @@
+[
+    {
+        "id": "3101",
+        "name": "Asus TUF Gaming F15",
+        "price": "1200",
+        "img": "https://www.startech.com.bd/image/cache/catalog/laptop/asus/fx506lh/fx506lh-1-500x500.jpg",
+        "processor": "Intel Core i5-10300H Processor (8M Cache, 2.50 GHz up to 4.50 GHz)"
+    },
+    {
+        "id": "3102",
+        "name": "MSI Modern 15 A11SB",
+        "price": "1500",
+        "img": "https://www.startech.com.bd/image/cache/catalog/laptop/msi/modern-15/modern-15-01-500x500.jpg",
+        "processor": "Intel Core i5-1135G7 Processor (8M Cache, 2.40 GHz up to 4.20 GHz) "
+    },
+    {
+        "id": "3103",
+        "name": "MSI Katana GF66",
+        "price": "2000",
+        "img": "https://www.startech.com.bd/image/cache/catalog/laptop/msi/katana-gf66-12uc/katana-gf66-12uc-03-500x500.jpg",
+        "processor": "Intel Core i7-12700H (24M Cache, 3.50 GHz up to 4.70 GHz)"
+    },
+    {
+        "id": "3104",
+        "name": "Razer Blade 15",
+        "price": "2500",
+        "img": "https://www.startech.com.bd/image/cache/catalog/laptop/razer/blade-15/base-model_1-500x500.jpg",
+        "processor": "Intel Core i7-10875H Processor (16M Cache, 2.30 GHz up to 5.10 GHz) "
+    }
+]
