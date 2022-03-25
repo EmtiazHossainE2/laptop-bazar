@@ -8,7 +8,7 @@ import './Products.css'
 const Products = () => {
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([])
-    console.log(cart);
+    // console.log(cart);
     useEffect(() => {
         fetch('products.json')
             .then(res => res.json())
@@ -16,7 +16,15 @@ const Products = () => {
     }, []);
 
     const handleAddToCart = (product) => {
-        const newCart = [...cart, product]
+        let newCart = []
+        const exists = cart.find(item => item.name === product.name)
+        if (!exists && cart.length < 4) {
+            newCart = [...cart, product]
+        }
+        else {
+            return newCart;
+        }
+
         setCart(newCart);
     }
 

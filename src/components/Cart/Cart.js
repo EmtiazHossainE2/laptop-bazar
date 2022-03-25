@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBabyCarriage, faTrash } from '@fortawesome/free-solid-svg-icons'
 import './Cart.css'
 
 const Cart = ({ cart }) => {
+    const [getOneItem, SetGetOneItem] = useState([])
     // console.log(cart);
+    const getOne = (cart) => {
+        let luckyOne = cart[Math.floor(Math.random() * cart.length)];
+        SetGetOneItem(luckyOne.name);
+    }
     return (
         <div>
 
@@ -15,9 +20,10 @@ const Cart = ({ cart }) => {
                         <p key={pd.id}>{pd.name}</p>
                     ))}
                 </div>
-                <button className='get-btn' >
+                <button className='get-btn' onClick={() => getOne(cart)} >
                     <p className='my-2 fs-5'>Get One <FontAwesomeIcon className='icon' icon={faBabyCarriage}></FontAwesomeIcon></p>
                 </button>
+                <p className='my-2'>{getOneItem}</p>
                 <button className='reset-btn' >
                     <p className='my-2 fs-5'>Reset <FontAwesomeIcon className='icon' icon={faTrash}></FontAwesomeIcon></p>
                 </button>
