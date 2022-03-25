@@ -6,3 +6,7 @@
     height: 500px;
     margin-bottom: 20px;
 }
+.question h5{
+    color: red;
+    padding: 0 px;
+}

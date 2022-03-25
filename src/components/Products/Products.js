@@ -21,18 +21,27 @@ const Products = () => {
         if (!exists && cart.length < 4) {
             newCart = [...cart, product]
         }
+        else if (exists && cart.length < 4) {
+            alert('Opps ! You are already selected')
+            return
+        }
         else {
-            return newCart;
+            alert("Oppps ! Your  can't add more ")
+            return
         }
 
         setCart(newCart);
+    }
+    const remove = () => {
+        let newCart = []
+        setCart(newCart)
     }
 
     return (
         <div>
 
             <div className="row product-container">
-                <div className="col-lg-10 pe-0 col-md-9">
+                <div className="col-lg-9 pe-0 col-md-9">
                     <div className="row container mt-5">
                         {
                             products.map(product => <Laptop
@@ -43,8 +52,8 @@ const Products = () => {
                         }
                     </div>
                 </div>
-                <div className="col-lg-2 ps-2 col-md-3 cart-container">
-                    <Cart cart={cart}></Cart>
+                <div className="col-lg-3 ps-2 col-md-3 cart-container">
+                    <Cart cart={cart} remove={remove}></Cart>
                 </div>
             </div>
 
