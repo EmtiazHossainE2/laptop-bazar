@@ -1,3 +1,21 @@
+.cart{
+    background-color: rgb(254, 255, 250);
+    border-radius: 10px;
+}
 .laptop-img{
     width: 200px;
+    border-radius: 10%;
+}
+.cart-btn{
+    width: 100%;
+    background-color: rgb(100, 102, 179);
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+.icon{
+    margin-left: 10px;
+    font-size: 17px;
 }
