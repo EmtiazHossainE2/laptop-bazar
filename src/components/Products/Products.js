@@ -8,6 +8,7 @@ import './Products.css'
 const Products = () => {
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState([])
+    console.log(cart);
     useEffect(() => {
         fetch('products.json')
             .then(res => res.json())
@@ -15,11 +16,13 @@ const Products = () => {
     }, []);
 
     const handleAddToCart = (product) => {
-        setCart(product);
+        const newCart = [...cart, product]
+        setCart(newCart);
     }
 
     return (
         <div>
+
             <div className="row product-container">
                 <div className="col-lg-10 pe-0 col-md-9">
                     <div className="row container mt-5">

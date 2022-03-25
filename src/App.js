@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Products from './components/Products/Products';
+import ReactQuestion from './components/ReactQuestion/ReactQuestion';
 const App = () => {
     return (
         <div className='overflow-hidden'>
@@ -10,6 +11,7 @@ const App = () => {
                 <h2>Get Your Laptop</h2>
             </div>
             <Products></Products>
+            <ReactQuestion ></ReactQuestion>
         </div>
     );
 };

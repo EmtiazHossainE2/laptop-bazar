@@ -1,0 +1,8 @@
+.cart-1,.cart-2, .cart-3{
+    background-color: rgb(240, 240, 248);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: justify;
+    height: 500px;
+    margin-bottom: 20px;
+}
