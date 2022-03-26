@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
+import { addToDb } from '../../utilities/fakedb';
 import Cart from '../Cart/Cart';
 import Laptop from '../Laptop/Laptop';
 import './Products.css'
@@ -29,7 +30,6 @@ const Products = () => {
             alert("Oppps ! Your  can't add more ")
             return
         }
-
         setCart(newCart);
     }
     const remove = () => {
