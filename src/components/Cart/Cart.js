@@ -4,7 +4,7 @@ import { faBabyCarriage, faTrash } from '@fortawesome/free-solid-svg-icons'
 import './Cart.css'
 import RandomName from '../RandomName/RandomName';
 
-const Cart = ({ cart, remove }) => {
+const Cart = ({ cart, remove, deleteAll }) => {
     const [getOneItem, SetGetOneItem] = useState([])
     console.log(cart);
     const getOne = (cart) => {
@@ -41,9 +41,11 @@ const Cart = ({ cart, remove }) => {
                 </div>
 
                 {/* <p className='my-2 ps-3'>{getOneItem}</p> */}
-                <button className='reset-btn' onClick={remove} >
-                    <p className='my-2 fs-5' onClick={() => removeAll(cart)}>Reset <FontAwesomeIcon className='icon' icon={faTrash}></FontAwesomeIcon></p>
-                </button>
+                <div onClick={deleteAll}>
+                    <button className='reset-btn' onClick={remove} >
+                        <p className='my-2 fs-5' onClick={() => removeAll(cart)}>Reset <FontAwesomeIcon className='icon' icon={faTrash}></FontAwesomeIcon></p>
+                    </button>
+                </div>
             </div>
         </div>
     );
