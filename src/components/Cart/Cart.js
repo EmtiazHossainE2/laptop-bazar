@@ -3,9 +3,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBabyCarriage, faTrash } from '@fortawesome/free-solid-svg-icons'
 import './Cart.css'
 import RandomName from '../RandomName/RandomName';
+import { removeFromDb } from '../../utilities/fakedb';
 
 const Cart = ({ cart, setCart, remove, deleteAll }) => {
-    const [getOneItem, SetGetOneItem] = useState([])
+    const [getOneItem, SetGetOneItem] = useState({})
     const getOne = (cart) => {
         let luckyOne = cart[Math.floor(Math.random() * cart.length)];
         SetGetOneItem(luckyOne);
@@ -16,12 +17,9 @@ const Cart = ({ cart, setCart, remove, deleteAll }) => {
     }
 
     const deleteSingleBtn = (id) => {
-        const deleteMe = cart.filter((product => product.id === id))
-
-        if (id in deleteMe) {
-            delete deleteMe[id];
-        }
+        const deleteMe = cart.filter(product => product.id !== id)
         setCart(deleteMe)
+        removeFromDb(id)
     }
 
     return (
@@ -41,12 +39,14 @@ const Cart = ({ cart, setCart, remove, deleteAll }) => {
                     <p className='my-2 fs-5'>Get One <FontAwesomeIcon className='icon' icon={faBabyCarriage}></FontAwesomeIcon></p>
                 </button>
 
-                <div className='cart-item'>
-                    <div className="cart-img my-2 ps-4">
-                        <img src={getOneItem.img} alt="" />
-                    </div>
-                    <p className='my-2 pe-4'>{getOneItem.name}</p>
-                </div>
+                {
+                    getOneItem?.id ? <div className='cart-item'>
+                        <div className="cart-img my-2 ps-4">
+                            <img src={getOneItem.img} alt="" />
+                        </div>
+                        <p className='my-2 pe-4'>{getOneItem.name}</p>
+                    </div> : null
+                }
 
                 {/* <p className='my-2 ps-3'>{getOneItem}</p> */}
                 <div onClick={deleteAll}>

@@ -3,7 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './RandomName.css'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
-const RandomName = ({ pd, deleteSingleBtn, id }) => {
+const RandomName = ({ pd, deleteSingleBtn }) => {
+    const { id } = pd
     return (
         <div>
             <div className='cart-item'>
