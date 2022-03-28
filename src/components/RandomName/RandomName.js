@@ -1,9 +1,9 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
+import './RandomName.css'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
-const RandomName = ({ pd }) => {
+const RandomName = ({ pd, deleteSingleBtn, id }) => {
     return (
         <div>
             <div className='cart-item'>
@@ -11,7 +11,7 @@ const RandomName = ({ pd }) => {
                     <img src={pd.img} alt="" />
                 </div>
                 <p >{pd.name} </p>
-                <p><FontAwesomeIcon className='icon deleteIcon' icon={faTrash}></FontAwesomeIcon></p>
+                <p onClick={() => deleteSingleBtn(id)}><FontAwesomeIcon className='icon deleteIcon' icon={faTrash}></FontAwesomeIcon></p>
             </div>
         </div>
     );

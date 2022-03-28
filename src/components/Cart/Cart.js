@@ -4,9 +4,8 @@ import { faBabyCarriage, faTrash } from '@fortawesome/free-solid-svg-icons'
 import './Cart.css'
 import RandomName from '../RandomName/RandomName';
 
-const Cart = ({ cart, remove, deleteAll }) => {
+const Cart = ({ cart, setCart, remove, deleteAll }) => {
     const [getOneItem, SetGetOneItem] = useState([])
-    console.log(cart);
     const getOne = (cart) => {
         let luckyOne = cart[Math.floor(Math.random() * cart.length)];
         SetGetOneItem(luckyOne);
@@ -16,6 +15,15 @@ const Cart = ({ cart, remove, deleteAll }) => {
         SetGetOneItem(newCart)
     }
 
+    const deleteSingleBtn = (id) => {
+        const deleteMe = cart.filter((product => product.id === id))
+
+        if (id in deleteMe) {
+            delete deleteMe[id];
+        }
+        setCart(deleteMe)
+    }
+
     return (
         <div>
 
@@ -23,7 +31,7 @@ const Cart = ({ cart, remove, deleteAll }) => {
                 <h3 className='pt-3 pb-2 text-center px-5'>Selected Items</h3>
                 <div className='ps-2'>
                     {cart.map(pd => (
-                        <RandomName pd={pd} key={pd.price}></RandomName>
+                        <RandomName pd={pd} key={pd.price} deleteSingleBtn={deleteSingleBtn}></RandomName>
                     ))}
                 </div>
                 <button className='get-btn' onClick={(e) => {

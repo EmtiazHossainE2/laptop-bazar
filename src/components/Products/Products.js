@@ -25,7 +25,7 @@ const Products = () => {
             if (exitsProducts) {
                 const quantity = storedCart[id]
                 exitsProducts.quantity = quantity
-                console.log(exitsProducts);
+                // console.log(exitsProducts);
                 savedCart.push(exitsProducts)
             }
         }
@@ -73,7 +73,7 @@ const Products = () => {
                     </div>
                 </div>
                 <div className="col-lg-3 ps-2 col-md-3 cart-container">
-                    <Cart cart={cart} remove={remove} deleteAll={deleteAll}></Cart>
+                    <Cart cart={cart} setCart={setCart} remove={remove} deleteAll={deleteAll}></Cart>
                 </div>
             </div>
 
